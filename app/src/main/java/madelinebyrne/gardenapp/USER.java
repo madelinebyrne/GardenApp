@@ -1,6 +1,7 @@
 package madelinebyrne.gardenapp;
 
 import java.util.Enumeration;
+import java.util.function.Function;
 
 /**
  * Created by Madeline Byrne on 6/17/2016.
@@ -14,4 +15,24 @@ public class USER
     public Enumeration privileges; //used for sharing purposes - ie readonly, write, etc
 
     //UPDATED LOCATION object
+
+    public Boolean passwordMatch;
+    //constructor
+    public USER(String usernameInput, String passwordInput1, String passwordInput2)
+    {
+
+        this.username = usernameInput;
+        if (passwordInput1==passwordInput2)
+        {
+            this.password=passwordInput1;
+            passwordMatch=true;
+        }
+        else{passwordMatch=false;}//UI logic asks to reenter password
+    }
+    //login method --??
 }
+
+
+
+
+
