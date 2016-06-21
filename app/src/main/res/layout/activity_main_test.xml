@@ -10,10 +10,31 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World"
+        android:text="Hello World?"
+        android:id="@+id/textView"
         app:layout_constraintLeft_toLeftOf="@+id/activity_main_test"
         app:layout_constraintTop_toTopOf="@+id/activity_main_test"
         app:layout_constraintRight_toRightOf="@+id/activity_main_test"
         app:layout_constraintBottom_toBottomOf="@+id/activity_main_test" />
 
+    <EditText
+        android:layout_width="215dp"
+        android:layout_height="42dp"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editText"
+        tools:layout_editor_absoluteY="49dp"
+        tools:layout_editor_absoluteX="84dp" />
+
+    <Button
+        android:text="Enter"
+        android:layout_width="91dp"
+        android:layout_height="51dp"
+        tools:layout_editor_absoluteY="106dp"
+        android:id="@+id/button"
+        android:onClick="inputEnter"
+        app:layout_constraintLeft_toLeftOf="@+id/activity_main_test"
+        app:layout_constraintRight_toRightOf="@+id/activity_main_test" />
+
 </android.support.constraint.ConstraintLayout>
+
