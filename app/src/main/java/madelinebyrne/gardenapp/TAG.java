@@ -4,6 +4,7 @@ package madelinebyrne.gardenapp;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.List;
 
 
@@ -13,43 +14,101 @@ import java.util.List;
 
  public class TAG
 {
-    //location coordinates (gps or image tbd)
+    //static location instance (gps or image tbd)
+
+    //photo collection instance
 
     public Integer ID; //auto-generated and unique to every object (used for reference)
 
-    //public  List fieldsList = new ArrayList() {}; //FIELD objects
+    public String CommonName;
+    public String Genus;
+    public String Species;
+    public String Variety;
+    public enum  PlantType {Tree, Shrub, Groundcover, Vine}; //etc
+    public PlantType thisPlantType;
+    public enum PlantSeasonalCharacteristics {Deciduous, Evergreen};
+    public PlantSeasonalCharacteristics thisPlantSeasonalCharacteristics;
+    public String Description;
+    public String CareNotes;
 
-    //public CommonNameFIELD CommonName;
+    public enum PlantState {Alive, Dead, Harvested}; //etc
+
+
     //-------------------------------------METHODS------------------------------------------------
 
-
-
-    //create or edit a common name field (add user input)
-    public void editCommonName(String userCommonNameFieldInput)
+    //Methods to edit/change state of tag variables based on user input
+    public void editCommonName(String userInput)
     {
-       // if (CommonName==null)
-        {
-            //create instance of CommonNameField and assign CommonName.fieldContent to user input
-       //     CommonName = new CommonNameFIELD(userCommonNameFieldInput);
-            Log.d("creating", "CommonName.fieldContent");
-        }
-       // else
-        {
-            //updating CommonName.fieldContent with new user input
-         //   CommonName.fieldContent=userCommonNameFieldInput;
-            Log.d("editing", "CommonName.fieldContent");
-        }
+        CommonName=userInput;
     }
+
+    public void editGenus(String userInput)
+    {
+        Genus=userInput;
+    }
+
+    public void editSpecies (String userInput)
+    {
+        Species=userInput;
+    }
+
+    public void editVariety(String userInput)
+    {
+        Variety=userInput;
+    }
+
+    public void setPlantTypeTree()
+    {
+        thisPlantType  = PlantType.Tree;
+    }
+
+    public void setPlantTypeShrub()
+    {
+        thisPlantType = PlantType.Shrub;
+    }
+
+    public void setPlantTypeGroundcover()
+    {
+        thisPlantType = PlantType.Groundcover;
+    }
+
+    public void setPlantTypeVine()
+    {
+        thisPlantType = PlantType.Vine;
+    }
+
+    public void setPlantSeasonalCharacteristicsDeciduous()
+    {
+        thisPlantSeasonalCharacteristics = PlantSeasonalCharacteristics.Deciduous;
+    }
+
+    public void setPlantSeasonalCharacterisesEvergreen()
+    {
+        thisPlantSeasonalCharacteristics = PlantSeasonalCharacteristics.Evergreen;
+    }
+
+    public void setDescription(String userInput)
+    {
+        Description=userInput;
+    }
+
+    public void setCareNotes(String userInput)
+    {
+        CareNotes=userInput;
+    }
+
+    //generate ID function
+
+    //upload photo function
+
+    //delete photo function
+
+    //set/update location function
+
 
     //constructor
-    public  TAG(String userCommonNameFieldInput)
+    public  TAG()
     {
-        //generate garden tag ID
-
-        //record tag location
-
-        //initialize with ONE important field (tbd)
-        editCommonName(userCommonNameFieldInput);
+        //call generate ID function
     }
-
 }
