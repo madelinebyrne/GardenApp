@@ -15,4 +15,16 @@ public class TAGCOLLECTION
     {
         tagList.add(foo);
     }
+
+    public List<TAG> searchCommonName(String searchInput)
+    {
+       List<TAG> searchResults = new ArrayList<TAG>();
+        for(int i=0; i<=tagList.size();i++)
+        {
+            if (tagList.get(i).CommonName == searchInput) {
+                searchResults.add(tagList.get(i));
+            }
+        }
+        return searchResults;
+    }
 }
