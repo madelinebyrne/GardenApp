@@ -37,22 +37,23 @@ import java.util.List;
     //-------------------------------------METHODS------------------------------------------------
 
     //Methods to edit/change state of tag variables based on user input
-    public void editCommonName(String userInput)
+    public void setCommonName(String userInput)
     {
+        Log.d("set Common Name", "entered");
         CommonName=userInput;
     }
 
-    public void editGenus(String userInput)
+    public void setGenus(String userInput)
     {
         Genus=userInput;
     }
 
-    public void editSpecies (String userInput)
+    public void setSpecies (String userInput)
     {
         Species=userInput;
     }
 
-    public void editVariety(String userInput)
+    public void setVariety(String userInput)
     {
         Variety=userInput;
     }
